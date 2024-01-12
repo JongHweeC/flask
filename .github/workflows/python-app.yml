@@ -8,9 +8,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # ubuntu 최신 버전으로 실행
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2 # git clone을 받는다
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -20,8 +20,8 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: jonghwee/github-actions-app
+        image: jonghwee/github-actions-app  # 저장소의 주소값
         tags: v3, latest
         registry: docker.io
-        username: jonghwee
+        username: jonghwee  # 계정 기반으로 push
         password: dckr_pat_FhGy7rK7YxG1903X_4wJLCLYtIc
