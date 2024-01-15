@@ -21,7 +21,6 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: jonghwee/github-actions-app  # 저장소의 주소값
-        # tags: v3, latest
         tags: ${{ github.sha }}, v1.0.0.0 # 빌드 번호를 가져옴
         registry: docker.io
         username: jonghwee  # 계정 기반으로 push
